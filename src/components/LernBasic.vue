@@ -1,15 +1,18 @@
 <template lang="">
     <div class="my-profile-card">
-        <p>My Name is : {{ name }}</p>
+
+      
+        <p v-if="name">My name is : Sopat Phanthusuwan</p>
+        <p v-else>My name is : โสพัส พันธุสุวรรณ</p>
         <p>My Nickname : {{ nickname }}</p>
         <p>I'm : {{ age }} year old.</p>
         <p>My Position : {{ position }}</p>
         <p>My favourite movies is :</p>
         <li v-for="myFavMovies in myFavMovies">{{ myFavMovies }}</li>
         <button class="btn" @click="count++">Click Me {{ count }}</button>
-        <button class="btn" @click="name ='Meebwow'">Change my name</button>
 
-        <button @click="awesome = !awesome">Toggle</button>
+        <button class="btn" @click="name = !name">Change my name</button>
+        <button class="btn" @click="awesome = !awesome">Toggle</button>
         <p v-if="awesome">Hello World !!</p>
         <p v-else>Hello Human !!</p>
 
@@ -20,7 +23,7 @@
 export default {
     data() {
         return {
-            name: "Sopat Phanthusuwan",
+            name: true,
             nickname: "Fair",
             age: "2x",
             position: "FontEnd Developer",
